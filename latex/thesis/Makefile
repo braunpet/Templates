@@ -55,4 +55,5 @@ $(FILEPDF): $(TEXSRC) $(BIBTEXDB)
 clean:
 	$(RM) *.aux *.dvi *.ps *.pdf *.bbl *.log *.toc *~ 
 	$(RM) *.blg *.lot *.out *.brf *.lof *.tps 
-
+	$(RM) *.run.xml *.lol *.bcf *-blx.bib
+	$(RM) $(FILEPDF)
