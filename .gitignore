@@ -96,3 +96,15 @@ sympy-plots-for-*.tex/
 
 # xindy
 *.xdy
+
+*.class
+
+.settings/
+target/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+
