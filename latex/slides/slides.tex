@@ -1,0 +1,88 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+\usetheme{Warsaw}
+
+\setbeamercovered{transparent}
+}
+ 
+\usecolortheme[RGB={0,33,63}]{structure}
+\usepackage{csquotes}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps} 
+\usepackage{hyperref}
+
+\lstnewenvironment{xml}{%
+  \lstset{numbers=left,numberstyle=\tiny,numbersep=6pt,%
+          language=xml,frame=lines,xleftmargin=2em,basicstyle=\scriptsize,%
+          columns=fullflexible,escapechar=\§,showstringspaces=false,breaklines=true}}{}
+
+\lstnewenvironment{java}{%
+  \lstset{numbers=left,numberstyle=\tiny,numbersep=6pt,%
+          language=Java,frame=lines,xleftmargin=2em,basicstyle=\scriptsize,%
+          columns=fullflexible,showstringspaces=false,breaklines=true}}{}
+
+\title{Vortragstitel}
+\author{Prof.\ Dr.\ Peter Braun}
+\institute{Hochschule für angewandte Wissenschaften Würzburg-Schweinfurt}
+\date{\today}
+\subject{Vortragsthema}
+\keywords{Stichwort1, Stichwort2}
+
+\makeatletter
+\AtBeginPart{%
+  \beamer@tocsectionnumber=0\relax
+  \setcounter{section}{0}
+}
+\makeatother
+
+\AtBeginSection[]
+{
+\begin{frame}<beamer>
+\frametitle{Übersicht}
+\tableofcontents[currentsection,hideallsubsections]
+\end{frame}
+}
+
+\begin{document}
+
+\begin{frame}[plain]  
+\titlepage
+\end{frame}
+
+\part{Vorlesung 1 -- Einführung}
+ 
+\begin{frame}{Inhaltsübersicht}
+\tableofcontents[hideallsubsections] 
+\end{frame}
+ 
+\section{Einführung}
+ 
+\begin{frame}{Herzlich Willkommen}
+\begin{itemize}
+   \item Punkt 1
+\end{itemize} 
+\end{frame} 
+ 
+ 
+\begin{frame}{Einführung}
+\begin{block}{Block 1}
+ \begin{itemize}
+  \item Punkt 1
+  \item Punkt 2
+ \end{itemize}
+\end{block}
+\begin{block}{Block 2}
+ \begin{itemize}
+  \item Punkt 1
+  \item Punkt 2
+ \end{itemize}
+\end{block}
+\end{frame} 
+
+\end{document}
