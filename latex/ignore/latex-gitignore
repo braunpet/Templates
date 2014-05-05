@@ -1,0 +1,46 @@
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+
+*.dvi
+# *.ps
+# *.eps
+# *.pdf
+
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+*.fdb_latexmk
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+*.nav
+*.snm
+*.vrb
+
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+
+*.brf
+*.lol
+*.idx
+*.ilg
+*.ind
+*.ist
+*.maf
+*.mtc
+*.mtc0
+*.pyg
+*.nlo
