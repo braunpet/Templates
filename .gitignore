@@ -107,4 +107,5 @@ target/
 *.war
 *.ear
 
+.texpadtmp
 
