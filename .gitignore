@@ -6,6 +6,7 @@
 *.fls
 *.out
 *.toc
+*.iml
 
 ## Intermediate documents:
 *.dvi
@@ -108,4 +109,6 @@ target/
 *.ear
 
 .texpadtmp
+.idea
 
+*.bak
