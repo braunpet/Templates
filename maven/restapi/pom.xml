@@ -9,8 +9,7 @@
 	<description>Demo REST Server</description>
 
 	<properties>
-		<src-integration>de/fhws/applab/restdemo/integration</src-integration>
-		<url-property-prefix>url</url-property-prefix>
+		<basepath>demo</basepath>
 	</properties>
 
 	<profiles>
@@ -23,65 +22,9 @@
 				<tomcat-server>tomcat-localhost</tomcat-server>
 				<tomcat-url>http://localhost:8080/manager/text</tomcat-url>
 			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>test</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<tasks>
-										<delete
-											file="${project.build.outputDirectory}/${src-integration}/${url-property-prefix}.properties" />
-										<copy
-											file="src/test/java/${src-integration}/${url-property-prefix}.localhost.properties"
-											tofile="${project.build.outputDirectory}/${src-integration}/${url-property-prefix}.properties" />
-									</tasks>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-		<profile>
-			<id>tomcat-staging</id>
-			<properties>
-				<tomcat-server>tomcat-staging</tomcat-server>
-				<tomcat-url>http://staging.applab.fhws.de:8080/manager/text</tomcat-url>
-			</properties>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-antrun-plugin</artifactId>
-						<executions>
-							<execution>
-								<phase>test</phase>
-								<goals>
-									<goal>run</goal>
-								</goals>
-								<configuration>
-									<tasks>
-										<delete
-											file="${project.build.outputDirectory}/${src-integration}/${url-property-prefix}.properties" />
-										<copy
-											file="src/test/java/${src-integration}/${url-property-prefix}.staging.properties"
-											tofile="${project.build.outputDirectory}/${src-integration}/${url-property-prefix}.properties" />
-									</tasks>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
 		</profile>
 	</profiles>
 	<build>
-
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -110,7 +53,7 @@
 				<configuration>
 					<url>${tomcat-url}</url>
 					<server>${tomcat-server}</server>
-					<path>/api</path>
+					<path>${basepath}</path>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -164,7 +107,7 @@
 		<dependency>
 			<groupId>com.owlike</groupId>
 			<artifactId>genson</artifactId>
-			<version>0.94</version>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
@@ -185,12 +128,6 @@
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet-core</artifactId>
 			<version>2.7</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.websocket</groupId>
-			<artifactId>javax.websocket-api</artifactId>
-			<version>1.0</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>

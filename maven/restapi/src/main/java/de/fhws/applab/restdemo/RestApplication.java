@@ -6,16 +6,16 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import de.fhws.applab.restdemo.Accounts;
+import de.fhws.applab.restdemo.api.AccountsService;
 
-@ApplicationPath("/demo")
-public class TestApplication extends Application
+@ApplicationPath("/api")
+public class RestApplication extends Application
 {
 	@Override
 	public Set<Class<?>> getClasses()
 	{
 		final Set<Class<?>> returnValue = new HashSet<Class<?>>();
-		returnValue.add(Accounts.class);
+		returnValue.add(AccountsService.class);
 		return returnValue;
 	}
 } 
