@@ -102,6 +102,8 @@ sympy-plots-for-*.tex/
 
 .settings/
 target/
+bin/
+gen/
 
 # Package Files #
 *.jar
