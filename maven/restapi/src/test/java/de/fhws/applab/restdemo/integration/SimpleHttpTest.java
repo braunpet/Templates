@@ -17,43 +17,51 @@ import org.apache.http.util.EntityUtils;
 import org.junit.Before;
 import org.junit.Test;
 
-public class SimpleHttpTest {
+public class SimpleHttpTest
+{
 
 	protected String url;
 
 	@Before
-	public void startup() {
-		try {
-			InputStream is = this.getClass().getResourceAsStream(
-					"url.properties");
-			Properties props = new Properties();
-			props.load(is);
-			this.url = props.getProperty("url");
-		} catch (IOException e) {
+	public void startup( )
+	{
+		try
+		{
+			InputStream is = this.getClass( ).getResourceAsStream(
+				"url.properties" );
+			Properties props = new Properties( );
+			props.load( is );
+			this.url = props.getProperty( "url" );
+		}
+		catch ( IOException e )
+		{
 			this.url = null;
-			e.printStackTrace();
+			e.printStackTrace( );
 		}
 	}
 
 	@Test
-	public void test1() throws Exception {
+	public void test1( ) throws Exception
+	{
 
-		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpGet httpGet = new HttpGet(this.url + "/demo/ping");
-		CloseableHttpResponse response1 = httpclient.execute(httpGet);
+		CloseableHttpClient httpclient = HttpClients.createDefault( );
+		HttpGet httpGet = new HttpGet( this.url + "/demo/ping" );
+		CloseableHttpResponse response1 = httpclient.execute( httpGet );
 
-		try {
-			StatusLine status = response1.getStatusLine();
-			assertEquals(HttpStatus.SC_OK, status.getStatusCode());
+		try
+		{
+			StatusLine status = response1.getStatusLine( );
+			assertEquals( HttpStatus.SC_OK, status.getStatusCode( ) );
 
-			HttpEntity entity1 = response1.getEntity();
-			String text = EntityUtils.toString(entity1);
-			assertEquals("OK", text);
+			HttpEntity entity1 = response1.getEntity( );
+			String text = EntityUtils.toString( entity1 );
+			assertEquals( "OK", text );
 
-			EntityUtils.consume(entity1);
-		} finally {
-			response1.close();
+			EntityUtils.consume( entity1 );
+		}
+		finally
+		{
+			response1.close( );
 		}
 	}
-
 }

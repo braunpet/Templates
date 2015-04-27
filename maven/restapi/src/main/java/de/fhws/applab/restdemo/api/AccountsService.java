@@ -1,7 +1,5 @@
 package de.fhws.applab.restdemo.api;
 
-import de.fhws.applab.restdemo.models.Person;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,6 +9,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+
+import de.fhws.applab.restdemo.models.Person;
 
 @Path( "/accounts" )
 public class AccountsService
@@ -31,7 +31,8 @@ public class AccountsService
 	public Response post( Person person )
 	{
 		System.out.println( person );
-		return Response.created( uriInfo.getAbsolutePathBuilder( ).path( person.getLastName( ) ).build( ) ).build( );
+		return Response.created( uriInfo.getAbsolutePathBuilder( ).path( person.getLastName( ) ).build( ) )
+			.build( );
 	}
 
 }
