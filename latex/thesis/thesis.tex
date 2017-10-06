@@ -257,9 +257,10 @@ Sed in tempus elit, sit amet suscipit quam. Ut suscipit dictum molestie. Etiam q
 %%%%%%%%%%%%%%%%%%%
 %% create figure list
 %%%%%%%%%%%%%%%%%%%
-
-\listoffigures
+\newpage
+\phantomsection
 \addcontentsline{toc}{chapter}{Verzeichnisse}			
+\listoffigures
 
 %%%%%%%%%%%%%%%%%%%
 %% create tables list
@@ -269,11 +270,15 @@ Sed in tempus elit, sit amet suscipit quam. Ut suscipit dictum molestie. Etiam q
 %%%%%%%%%%%%%%%%%%%
 %% create listings list
 %%%%%%%%%%%%%%%%%%%
-%\lstlistoflistings
-%\addcontentsline{toc}{chapter}{Listings}				
+%\newpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Listings}
+%\lstlistoflistings			
 
-\printbibliography
-\addcontentsline{toc}{chapter}{Literatur}				
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Literatur}
+\printbibliography		
 
 %%%%%%%%%%%%%%%%%%%
 %% declaration on oath
